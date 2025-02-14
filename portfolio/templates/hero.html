@@ -1,0 +1,164 @@
+{% load static %} 
+{% block extra_css%}
+<link rel="stylesheet" href="{% static 'css/hero.css' %}" />
+{% endblock %}
+<!-- Video Background -->
+
+{% if hero.background_video %}
+<video autoplay muted loop id="background-video">
+  <source src="{{ hero.background_video.url }}" type="video/mp4" />
+</video>
+{% endif %}
+ 
+<section
+class="main"
+id="Home"
+{% if hero.background_image %}
+  style="
+    background-image: url({{ hero.background_image.url }});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  "
+  {% endif %}
+>
+  <div class="hero-overlay"></div>
+
+  <!-- Social Links -->
+  <nav class="social-nav">
+    <ul>
+      {% for link in links %}
+      <li>
+        <a href="{{link.url}}" target="_blank"
+          ><i class="{{link.icon_class}}"></i
+        ></a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h3 class="intro">{{ hero.mes }}</h3>
+    <h1 class="name">{{ hero.name }}</h1>
+    <h5 class="designation">{{ hero.tiel }}</h5>
+    <p class="description">{{ hero.des }}</p>
+    <a href="#Abt" class="btn">{{hero.button_text}}</a>
+  </div>
+</section>
+
+<section class="main2">
+  <nav>
+    <input type="checkbox" id="click" />
+    <label for="click" class="menu-x">
+      <i class="fa-solid fa-x fa-xl" style="color: #ffffff"></i>
+    </label>
+    <label for="click" class="menu-btn">
+      <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff"></i>
+    </label>
+    <ul>
+      <div class="nv1">
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Abt">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </div>
+      <div class="nv2">
+        <h4>Sahil Rajput</h4>
+        <h5>Web Designer | Developer</h5>
+      </div>
+      <div class="nv3">
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Add">Add Projects</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </div>
+      <div class="bar">
+        <label for="barss"
+          ><i class="fa-solid fa-bars fa-2xl" style="color: #ffffff"></i
+        ></label>
+        <div class="chkd">
+          <input type="checkbox" id="barss" />
+        </div>
+      </div>
+    </ul>
+  </nav>
+  <section class="two" id="Abt" style="background-image: url({% static
+  "media/port.jpg" %});">
+
+  <div class="sb">
+    <div class="sb1">
+      <h1>Who am I ?</h1>
+
+      <h4>A Web Designer / Python Developer</h4>
+      <p>
+        I'm a web developer skilled in Html, CSS, Bootstrap, Python, Django, and
+        MySQL, focusing on building scalable and efficient web applications.
+      </p>
+
+      <a href="/resume">Download My CV</a>
+    </div>
+
+    <br />
+
+    <div class="sb2">
+      <h1>Personal Info</h1>
+      <h5><b>Birthday:</b>05/11/2001<br /></h5>
+      <h5><b>Email:</b>sahilrajput5321@gmail.com <br /></h5>
+      <h5><b>Phone:</b>7404304607<br /></h5>
+      <h5><b>Github:</b>www.Github.com/sahil51<br /></h5>
+      <h5><b>Address:</b>#58 no. Mall Road Ambala Cantt<br /></h5>
+      <div class="icn">
+        {% for link in links %}
+        <a href="{{link.url}}" target="_blank"
+          ><i
+            class="{{link.icon_class}}"
+            style="color: #afb1ff; font-size: 2rem"
+          ></i
+        ></a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <br />
+
+    <div class="sb3">
+      <h1>My Expertise</h1>
+      <br />
+
+      <div class="cln">
+        <i class="fa-solid fa-code fa-2xl" style="color: #afb1ff"></i>
+        <p>
+          <b>Frontend Development : </b> HTML5, CSS3, Bootstrap, Responsive
+          Design, Cross-browser Compatibility
+        </p>
+      </div>
+      <br />
+      <div class="cln">
+        <i class="fa-solid fa-terminal fa-2xl" style="color: #afb1ff"></i>
+        <p>
+          <b>Backend Development :</b> Python, Django, Flask, Authentication &
+          Authorization
+        </p>
+      </div>
+
+      <br />
+
+      <div class="cln">
+        <i class="fa-solid fa-database fa-2xl" style="color: #afb1ff"></i>
+        <p class="p3"><b>Database Management : </b> MySQL, SQL Queries</p>
+      </div>
+      <br />
+      <div class="cln">
+        <i class="fa-solid fa-code-fork fa-2xl" style="color: #afb1ff"></i>
+        <p class="p4"><b>Version Control & Collaboration : </b> Git, GitHub</p>
+      </div>
+      <br />
+      <div class="cln">
+        <i class="fa-solid fa-laptop-code fa-2xl" style="color: #afb1ff"></i>
+        <p class="p5">
+          <b> Web Development Tools : </b> VS Code, Notepad++, Sublime Text
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

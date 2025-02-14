@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+.section-m {
+    margin-top: -60px;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    padding: 100px 20px;
+}
+
+/* Text Styling */
+.section-m b {
+    color: #cdcdcd; /* Light Gray */
+}
+
+.section-m h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #ffffff; /* White */
+}
+
+.section-m span b {
+    color: #e5e5e5; /* Light Gray */
+}
+
+/* General Card Styling */
+.section-m .card {
+    background: rgba(0, 0, 0, 0.349);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+    
+    /* ✅ Responsive box size */
+    width: 90; /* Adjusts for 3 cards per row */
+ 
+    height: 650px; /* Fixed height for uniformity */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Cards Layout */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;  /* Space between cards */
+}
+
+/* Card Header */
+.card-header h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffffff; /* White */
+}
+
+/* Card Body */
+.card-body h6 {
+    font-size: 1.2rem;
+    color: #cdcdcd; /* Light Gray */
+    margin-bottom: 10px;
+}
+
+.card-body .progress {
+    height: 8px;
+    background: #2c2c2c;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.card-body .progress-bar {
+    background-color: #e5e5e5; /* Light Gray */
+}
+
+.card-body .line {
+    border-bottom: 2px solid #444;
+    margin: 15px 0;
+}
+
+.section-m p {
+    color: #999999; /* Medium Gray */
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: 100%;
+        height: auto; /* Adjust height for content */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* 1 card per row */
+        height: auto; /* Full width */
+    }
+
+    .section-m h2 {
+        font-size: 2.5rem; /* Reduce heading size */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-m {
+
+        padding: 50px 10px; /* Reduce padding */
+    }
+
+    .section-m h2 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .card {
+        width: 100%;
+        padding: 20px; /* Adjust padding */
+    }
+}
+
+
+#Projects {
+    background-color: #2e2e2e;
+    padding: 40px;
+ 
+    margin: 0; /* Removes any unintended margins */
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+/* Remove default margin & padding from body */
+
+.three {
+    background-color: #2e2e2e;
+
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Headline styling */
+.three h4 {
+    color: #ffffff;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.three .hire-btn {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 12px 40px;
+    background-color: #7678ff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.three .hire-btn:hover {
+    background-color: #3b4250;
+    transform: scale(1.05);
+}
