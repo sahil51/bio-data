@@ -60,7 +60,7 @@
     float: right;
     margin-right: 10px;
     margin-top: 10px;
-    color: #7678ff; /* Adjust to match your theme */
+    color: #7678ff; 
     transition: color 0.3s ease;
 }
 
@@ -68,10 +68,10 @@
     display: flex;
     float: right;
     margin-top: 30px;
-    color: #7678ff; /* Adjust to match your theme */
+    color: #7678ff; 
     text-decoration: none;
     transition: color 0.3s ease;
 }
 .source-code-icon:hover {
-    color: #3b4250; /* Darker color on hover */
+    color: #3b4250; 
 }

@@ -23,18 +23,18 @@ body {
 
 /* Text Styling */
 .section-m b {
-    color: #cdcdcd; /* Light Gray */
+    color: #cdcdcd;
 }
 
 .section-m h2 {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 60px;
-    color: #ffffff; /* White */
+    color: #ffffff;
 }
 
 .section-m span b {
-    color: #e5e5e5; /* Light Gray */
+    color: #e5e5e5;
 }
 
 /* General Card Styling */
@@ -48,9 +48,9 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
     
     /* ✅ Responsive box size */
-    width: 90; /* Adjusts for 3 cards per row */
+    width: 90; 
  
-    height: 650px; /* Fixed height for uniformity */
+    height: 650px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,20 +67,20 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;  /* Space between cards */
+    gap: 10px; 
 }
 
 /* Card Header */
 .card-header h4 {
     font-size: 1.8rem;
     margin-bottom: 15px;
-    color: #ffffff; /* White */
+    color: #ffffff;
 }
 
 /* Card Body */
 .card-body h6 {
     font-size: 1.2rem;
-    color: #cdcdcd; /* Light Gray */
+    color: #cdcdcd; 
     margin-bottom: 10px;
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 .card-body .progress-bar {
-    background-color: #e5e5e5; /* Light Gray */
+    background-color: #e5e5e5;
 }
 
 .card-body .line {
@@ -101,40 +101,40 @@ body {
 }
 
 .section-m p {
-    color: #999999; /* Medium Gray */
+    color: #999999; 
 }
 
 @media (max-width: 1200px) {
     .card {
         width: 100%;
-        height: auto; /* Adjust height for content */
+        height: auto;
     }
 }
 
 @media (max-width: 768px) {
     .card {
-        width: 100%; /* 1 card per row */
-        height: auto; /* Full width */
+        width: 100%; 
+        height: auto;
     }
 
     .section-m h2 {
-        font-size: 2.5rem; /* Reduce heading size */
+        font-size: 2.5rem; 
     }
 }
 
 @media (max-width: 480px) {
     .section-m {
 
-        padding: 50px 10px; /* Reduce padding */
+        padding: 50px 10px; 
     }
 
     .section-m h2 {
-        font-size: 2rem; /* Smaller heading */
+        font-size: 2rem;
     }
 
     .card {
         width: 100%;
-        padding: 20px; /* Adjust padding */
+        padding: 20px;
     }
 }
 
@@ -143,11 +143,11 @@ body {
     background-color: #2e2e2e;
     padding: 40px;
  
-    margin: 0; /* Removes any unintended margins */
+    margin: 0; 
     text-align: center;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
 }
-/* Remove default margin & padding from body */
+   
 
 .three {
     background-color: #2e2e2e;

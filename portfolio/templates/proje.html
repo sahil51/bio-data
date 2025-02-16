@@ -1,65 +1,37 @@
 {% load static %}
 {% block extra_css %}
-<link rel="stylesheet" href="../static/css/proje.css">
+<link rel="stylesheet" href="{% static 'css/proje.css' %}" />
 {% endblock %}
 
-<video autoplay muted loop id="background-video">
-    <source src="{% static 'media/bgf2.mp4' %}" type="video/mp4">
-</video>
 
-<section class="projects-section">
-    <div class="container">
-        <h2 class="text-white mb-5">My Projects</h2>
+{% if project_section_background %}
+    {% if project_section_background.background_video %}
+        <video autoplay muted loop id="background-video">
+            <source src="{{ project_section_background.background_video.url }}" type="video/mp4">
+        </video>
+    {% elif project_section_background.background_image %}
+    <section class="projects-section mb-5" style="background-image: url('{{ project_section_background.background_image.url }}');">
+        
+    {% endif %}
+{% endif %}
+    <div class="container mb-5">
+        <h2 class="text-white mb-5 mt-5 d-flex  justify-content-center">My Projects</h2>
         <div class="row g-4">
             <!-- Project 1 -->
-            <div class="col-md-4">
-                <div class="card p-4 position-relative">
-                    <h3 class="card-title">Portfolio Website</h3>
-                    <p class="card-text"><strong>Tech:</strong> HTML, CSS, Bootstrap, Flask, MySQL</p>
-                    <p class="card-text">A personal portfolio website showcasing my work and skills.</p>
-                    <a href="https://yourportfolio.com" class="btn btn-custom" target="_blank">View Project</a>
+            {% for project in projects %}
+            <div class="col-md-4 mt-5">
+                <div class="card p-4 position-relative ">
+                    <h3 class="card-title">{{ project.title }}</h3>
+                    <p class="card-text"><strong>Tech:</strong>{{ project.tech }}</p>
+                    <p class="card-text">{{ project.des }}</p>
+                    <a href="{{ project.live_link }}" class="btn btn-custom" target="_blank">View Project</a>
                     <!-- Source Code Icon -->
-                    <a href="https://github.com/yourgithub/portfolio-website" class="source-code-icon" target="_blank">
+                    <a href="{{ project.source_code }}" class="source-code-icon" target="_blank">
                         <i class="fa-brands fa-github fa-2xl"></i>Source Code
                     </a>
                 </div>
             </div>
-
-            <!-- Project 2 -->
-            <div class="col-md-4">
-                <div class="card p-4 position-relative">
-                    <h3 class="card-title">User Registration and Management System</h3>
-                    <p class="card-text"><strong>Tech:</strong> HTML, CSS, Flask, MySQL</p>
-                    <p class="card-text">
-                        Created a secure user registration and management system using Flask.
-                        Implemented OTP-based email verification and password reset.
-                        Developed an admin dashboard for user control.
-                    </p>
-                    <a href="https://yourstore.com" class="btn btn-custom" target="_blank">View Project</a>
-                    <!-- Source Code Icon -->
-                    <a href="https://github.com/yourgithub/user-management-system" class="source-code-icon" target="_blank">
-                        <i class="fa-brands fa-github fa-2xl"></i>Source Code
-                    </a>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="col-md-4">
-                <div class="card p-4 position-relative">
-                    <h3 class="card-title">Student Management System</h3>
-                    <p class="card-text"><strong>Tech:</strong> Python, Tkinter, MySQL</p>
-                    <p class="card-text">
-                        Designed a system to add, update, delete, and search student records.
-                        Ensured secure data storage and retrieval from a MySQL database.
-                        Included error handling for smooth database connection.
-                    </p>
-                    <a href="https://yourblog.com" class="btn btn-custom" target="_blank">View Project</a>
-                    <!-- Source Code Icon -->
-                    <a href="https://github.com/yourgithub/student-management-system" class="source-code-icon" target="_blank">
-                        <i class="fa-brands fa-github fa-2xl"> </i>Source Code
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div> 
 </section>

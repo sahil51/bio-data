@@ -4,24 +4,24 @@
 {% endblock %}
 <!-- Video Background -->
 
-{% if hero.background_video %}
+{% if background.background_type == "video" %}
 <video autoplay muted loop id="background-video">
-  <source src="{{ hero.background_video.url }}" type="video/mp4" />
+  <source src="{{ background.video.url }}" type="video/mp4">
 </video>
 {% endif %}
- 
+
 <section
 class="main"
 id="Home"
-{% if hero.background_image %}
+{% if background.background_type == "image" %}
   style="
-    background-image: url({{ hero.background_image.url }});
+    background-image: url('{{ background.image.url }}');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
   "
-  {% endif %}
+{% endif %}
 >
   <div class="hero-overlay"></div>
 
@@ -82,36 +82,39 @@ id="Home"
       </div>
     </ul>
   </nav>
-  <section class="two" id="Abt" style="background-image: url({% static
-  "media/port.jpg" %});">
+  <section class="two" id="Abt" style="background-image: url('{{ about.background.url }}'); background-size: cover; background-position: center;">
+ 
+  {% if about.background.url %}  
+      <video autoplay loop muted playsinline class='two' id="background-video">
+          <source src="{{ about.background.url }}" type="video/mp4">
+      </video>
+  {% endif %}
 
-  <div class="sb">
+
+  <div class="sb " data-aos="zoom-in-up">
     <div class="sb1">
-      <h1>Who am I ?</h1>
+      <h1>{{ about.title }}</h1>
 
-      <h4>A Web Designer / Python Developer</h4>
-      <p>
-        I'm a web developer skilled in Html, CSS, Bootstrap, Python, Django, and
-        MySQL, focusing on building scalable and efficient web applications.
-      </p>
+      <h4>{{ about.des }}</h4>
+      <p>{{ about.bio }}</p>
 
-      <a href="/resume">Download My CV</a>
+      <a href="{{about.cv.url}}" Download>Download My CV</a>
     </div>
 
     <br />
 
     <div class="sb2">
       <h1>Personal Info</h1>
-      <h5><b>Birthday:</b>05/11/2001<br /></h5>
-      <h5><b>Email:</b>sahilrajput5321@gmail.com <br /></h5>
-      <h5><b>Phone:</b>7404304607<br /></h5>
-      <h5><b>Github:</b>www.Github.com/sahil51<br /></h5>
-      <h5><b>Address:</b>#58 no. Mall Road Ambala Cantt<br /></h5>
+      <h5><b>Birthday:</b>{{about.birthday}}<br /></h5>
+      <h5><b>Email:</b> {{about.email}}<br /></h5>
+      <h5><b>Phone:</b>{{about.phone}} <br/></h5>
+      <h5><b>Github:</b>{{about.github}} <br/></h5>
+      <h5><b>Address:</b>{{about.address}}<br/></h5>
       <div class="icn">
         {% for link in links %}
-        <a href="{{link.url}}" target="_blank"
+        <a href="{{link.url}}" class='sb2_a' target="_blank"
           ><i
-            class="{{link.icon_class}}"
+            class="{{link.icon_class}}" id="sb2_i"
             style="color: #afb1ff; font-size: 2rem"
           ></i
         ></a>
@@ -123,42 +126,15 @@ id="Home"
 
     <div class="sb3">
       <h1>My Expertise</h1>
-      <br />
-
+      <br/>
+      {% for cat in skills %}
       <div class="cln">
-        <i class="fa-solid fa-code fa-2xl" style="color: #afb1ff"></i>
+        <i class="{{cat.icon}}" style="color: #afb1ff"></i>
         <p>
-          <b>Frontend Development : </b> HTML5, CSS3, Bootstrap, Responsive
-          Design, Cross-browser Compatibility
+          <b>{{cat.name}} : </b>{{cat.des}}
         </p>
       </div>
-      <br />
-      <div class="cln">
-        <i class="fa-solid fa-terminal fa-2xl" style="color: #afb1ff"></i>
-        <p>
-          <b>Backend Development :</b> Python, Django, Flask, Authentication &
-          Authorization
-        </p>
-      </div>
-
-      <br />
-
-      <div class="cln">
-        <i class="fa-solid fa-database fa-2xl" style="color: #afb1ff"></i>
-        <p class="p3"><b>Database Management : </b> MySQL, SQL Queries</p>
-      </div>
-      <br />
-      <div class="cln">
-        <i class="fa-solid fa-code-fork fa-2xl" style="color: #afb1ff"></i>
-        <p class="p4"><b>Version Control & Collaboration : </b> Git, GitHub</p>
-      </div>
-      <br />
-      <div class="cln">
-        <i class="fa-solid fa-laptop-code fa-2xl" style="color: #afb1ff"></i>
-        <p class="p5">
-          <b> Web Development Tools : </b> VS Code, Notepad++, Sublime Text
-        </p>
-      </div>
-    </div>
+      <br/>
+      {% endfor %}
   </div>
 </section>
