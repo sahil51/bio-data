@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-it24q4*dtfvpq5_dzdu-1jg(^(lyg^xe!2^o65*u*q-sq5m$n7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','.now.sh']
 
 
 # Application definition
@@ -78,13 +78,23 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',  # Replace with your database name
+        'USER': 'postgres',  # Replace with your database user
+        'PASSWORD': 'RomFBIpeKjfhDPkxUPUKdhiNiiYTSuAa',  # Replace with your database password
+        'HOST': 'tramway.proxy.rlwy.net',  # Set to your database host
+        'PORT': '19893',  # Default PostgreSQL port
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -125,7 +135,7 @@ STATICFILES_DIRS = [
     BASE_DIR /  "static",
  ]
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','static')
 
 MEDIA_URL = '/mediafiles/'
 MEDIA_ROOT = BASE_DIR / 'media'
