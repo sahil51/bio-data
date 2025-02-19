@@ -12,3 +12,8 @@ python manage.py migrate
 
 # Collect static files
 python manage.py collectstatic --noinput
+
+#!/bin/bash
+python3 -m pip install --upgrade pip  # Ensure pip is installed
+pip install -r requirements.txt  # Install dependencies
+python3 manage.py collectstatic --noinput  # Collect static files
