@@ -1,19 +1,12 @@
 #!/bin/bash
+# Ensure Python and pip are available
+which python3 || exit 1
+which pip3 || exit 1
 
-# Ensure pip is installed
-python -m ensurepip --default-pip
+# Install dependencies
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
 
-# Upgrade pip and install dependencies
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-
-# Run migrations (optional, if needed)
-python manage.py migrate
-
-# Collect static files
-python manage.py collectstatic --noinput
-
-#!/bin/bash
-python3 -m pip install --upgrade pip  # Ensure pip is installed
-pip install -r requirements.txt  # Install dependencies
-python3 manage.py collectstatic --noinput  # Collect static files
+# Run migrations and collect static files
+python3 manage.py migrate
+python3 manage.py collectstatic --noinput
