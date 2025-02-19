@@ -61,6 +61,7 @@ pillow==10.4.0
 platformdirs==4.2.2
 prompt_toolkit==3.0.47
 psutil==6.0.0
+psycopg2-binary==2.9.10
 pure_eval==0.2.3
 PyAudio==0.2.14
 PyAutoGUI==0.9.54
@@ -77,6 +78,7 @@ PyQRCode==1.2.1
 PyRect==0.2.0
 PyScreeze==1.0.1
 python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
 pyttsx3==2.91
 pytube==15.0.0
 pytweening==1.2.0
